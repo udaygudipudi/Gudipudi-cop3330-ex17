@@ -1,0 +1,69 @@
+/*
+ *  UCF COP3330 Fall 2021 Assignment 1 Solution
+ *  Copyright 2021 Uday Gudipudi
+ */
+
+import java.util.*;
+class Main {
+  public static void main(String[] args) {
+    
+    Scanner scan = new Scanner(System.in);
+
+    System.out.print("Enter a 1 is you are male or a 2 if you are female: ");
+    int choice = scan.nextInt(); 
+
+    System.out.print("How many ounces of alcohol did you have? ");
+    double ounces = scan.nextDouble();
+
+    System.out.print("What is your weight, in pounds? ");
+    double weight = scan.nextDouble();
+
+    System.out.print("How many hours has it been since your last drink? ");
+    double hours = scan.nextDouble();
+
+    if (choice == 1){
+      
+      double a = ounces * 5.14;
+      double e = a / weight;
+      double f = e * 0.73;
+      double c = hours * 0.015;
+      double bac = f - c;
+
+      System.out.print("Your BAC is "+bac+" ");
+      System.out.printf("%n");
+
+      if (bac < 0.08){
+
+        System.out.print("It is legal for you to drive. ");
+      }
+      else {
+
+        System.out.print("It is not legal for you to drive ");
+      }
+    
+    }
+
+    if (choice == 2){
+
+      double a = ounces * 5.14;
+      double e = a / weight;
+      double f = e * 0.66;
+      double c = hours * 0.015;
+      double bac = f - c;
+
+      System.out.print("Your BAC is "+bac+" ");
+      System.out.printf("%n");
+
+      if (bac < 0.08){
+
+        System.out.print("It is legal for you to drive. ");
+      }
+      else {
+
+        System.out.print("It is not legal for you to drive ");
+      }
+    
+    }
+
+  }
+}
